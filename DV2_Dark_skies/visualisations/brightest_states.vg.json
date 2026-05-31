@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Brightest states and territories",
+  "width": 260,
+  "height": 240,
+  "data": {
+    "url": "data/night_lights_state_year.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.year == 2024"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "x": {
+      "field": "brightness",
+      "type": "quantitative",
+      "title": "Average brightness"
+    },
+    "tooltip": [
+      {
+        "field": "state"
+      },
+      {
+        "field": "brightness"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

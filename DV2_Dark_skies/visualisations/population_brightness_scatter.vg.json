@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Population vs brightness",
+  "width": 260,
+  "height": 240,
+  "data": {
+    "url": "data/population_brightness.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "size": 90,
+    "opacity": 0.75
+  },
+  "encoding": {
+    "x": {
+      "field": "population",
+      "type": "quantitative",
+      "title": "Population"
+    },
+    "y": {
+      "field": "brightness",
+      "type": "quantitative",
+      "title": "Brightness"
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "area"
+      },
+      {
+        "field": "population"
+      },
+      {
+        "field": "brightness"
+      },
+      {
+        "field": "category"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

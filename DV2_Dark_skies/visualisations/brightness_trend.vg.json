@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Night-light change over time",
+  "width": 260,
+  "height": 240,
+  "data": {
+    "url": "data/night_lights_state_year.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "brightness",
+          "as": "avg_brightness"
+        }
+      ],
+      "groupby": [
+        "year"
+      ]
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year"
+    },
+    "y": {
+      "field": "avg_brightness",
+      "type": "quantitative",
+      "title": "Avg brightness"
+    },
+    "tooltip": [
+      {
+        "field": "year"
+      },
+      {
+        "field": "avg_brightness",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

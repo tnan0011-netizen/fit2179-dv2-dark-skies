@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Population by brightness band",
+  "width": 260,
+  "height": 240,
+  "data": {
+    "url": "data/population_brightness_band.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year"
+    },
+    "y": {
+      "field": "percentage",
+      "type": "quantitative",
+      "stack": "normalize",
+      "title": "Share of population"
+    },
+    "color": {
+      "field": "band",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "year"
+      },
+      {
+        "field": "band"
+      },
+      {
+        "field": "percentage"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

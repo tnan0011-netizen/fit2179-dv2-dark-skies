@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Best stargazing spots",
+  "width": 460,
+  "height": 300,
+  "data": {
+    "url": "data/stargazing_score.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "y": {
+      "field": "place",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "x": {
+      "field": "total_score",
+      "type": "quantitative",
+      "title": "Overall score"
+    },
+    "tooltip": [
+      {
+        "field": "place"
+      },
+      {
+        "field": "state"
+      },
+      {
+        "field": "darkness_score"
+      },
+      {
+        "field": "cloud_score"
+      },
+      {
+        "field": "access_score"
+      },
+      {
+        "field": "total_score"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

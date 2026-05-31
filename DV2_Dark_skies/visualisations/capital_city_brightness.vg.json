@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Brightest capital cities",
+  "width": 260,
+  "height": 240,
+  "data": {
+    "url": "data/capital_city_brightness.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "size": 110
+  },
+  "encoding": {
+    "y": {
+      "field": "city",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "x": {
+      "field": "brightness",
+      "type": "quantitative",
+      "title": "Brightness"
+    },
+    "tooltip": [
+      {
+        "field": "city"
+      },
+      {
+        "field": "brightness"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

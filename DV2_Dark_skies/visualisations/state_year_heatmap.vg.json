@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Brightness by state and year",
+  "width": 900,
+  "height": 260,
+  "data": {
+    "url": "data/night_lights_state_year.csv"
+  },
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year"
+    },
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "title": null
+    },
+    "color": {
+      "field": "brightness",
+      "type": "quantitative",
+      "title": "Brightness",
+      "scale": {
+        "scheme": "goldred"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "state"
+      },
+      {
+        "field": "year"
+      },
+      {
+        "field": "brightness"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

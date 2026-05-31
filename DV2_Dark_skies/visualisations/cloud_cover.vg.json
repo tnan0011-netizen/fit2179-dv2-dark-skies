@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Average cloud cover",
+  "width": 460,
+  "height": 300,
+  "data": {
+    "url": "data/cloud_cover.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "region",
+      "type": "nominal",
+      "sort": "-y",
+      "axis": {
+        "labelAngle": -25
+      },
+      "title": null
+    },
+    "y": {
+      "field": "cloud_cover",
+      "type": "quantitative",
+      "title": "Cloud cover (%)"
+    },
+    "tooltip": [
+      {
+        "field": "region"
+      },
+      {
+        "field": "cloud_cover"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

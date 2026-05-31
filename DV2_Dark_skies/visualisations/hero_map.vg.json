@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Placeholder map: city night-time brightness",
+  "width": 640,
+  "height": 360,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -27
+    ],
+    "scale": 760
+  },
+  "data": {
+    "url": "data/capital_city_brightness.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "opacity": 0.85,
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "longitude": {
+      "field": "lon",
+      "type": "quantitative"
+    },
+    "latitude": {
+      "field": "lat",
+      "type": "quantitative"
+    },
+    "size": {
+      "field": "brightness",
+      "type": "quantitative",
+      "title": "Brightness"
+    },
+    "color": {
+      "field": "brightness",
+      "type": "quantitative",
+      "title": "Brightness",
+      "scale": {
+        "scheme": "goldred"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "city",
+        "type": "nominal"
+      },
+      {
+        "field": "state",
+        "type": "nominal"
+      },
+      {
+        "field": "brightness",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Brightness by remoteness",
+  "width": 260,
+  "height": 240,
+  "data": {
+    "url": "data/remoteness_brightness.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "remoteness",
+      "type": "nominal",
+      "sort": null,
+      "title": null,
+      "axis": {
+        "labelAngle": -30
+      }
+    },
+    "y": {
+      "field": "brightness",
+      "type": "quantitative",
+      "title": "Brightness"
+    },
+    "tooltip": [
+      {
+        "field": "remoteness"
+      },
+      {
+        "field": "brightness"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

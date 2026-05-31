@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Placeholder map: certified dark-sky places",
+  "width": 480,
+  "height": 300,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -27
+    ],
+    "scale": 720
+  },
+  "data": {
+    "url": "data/darksky_places.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "size": 100,
+    "opacity": 0.85
+  },
+  "encoding": {
+    "longitude": {
+      "field": "lon",
+      "type": "quantitative"
+    },
+    "latitude": {
+      "field": "lat",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "type",
+      "type": "nominal",
+      "legend": {
+        "title": "Place type"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "place"
+      },
+      {
+        "field": "state"
+      },
+      {
+        "field": "type"
+      },
+      {
+        "field": "darkness_score"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
